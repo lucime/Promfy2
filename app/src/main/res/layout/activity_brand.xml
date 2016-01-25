@@ -1,0 +1,113 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <jp.co.cyberagent.android.gpuimage.GPUImageView
+        android:id="@+id/gpuimage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bar"
+        android:layout_below="@+id/topbar"/>
+
+    <LinearLayout
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorTopControlBackground"
+        android:gravity="center"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:weightSum="2.0" >
+
+        <TextView
+            android:id="@+id/backCamera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_weight="1"
+            android:gravity="start"
+            android:text="BACK"
+            android:textColor="#333" />
+        <TextView
+            android:id="@+id/shareImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="SHARE"
+            android:textColor="#333" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#000"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            style="@style/Base.Widget.AppCompat.SeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:thumb="@drawable/thumb_seekbar"
+            android:visibility="gone"
+            android:max="100" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/effectsBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bar"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:gravity="center_vertical"
+        android:weightSum="3" >
+
+        <com.lucime.promfy.ui.CircleButton
+            android:id="@+id/button_choose_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="10dp"
+            app:cb_color="#fff"
+            android:src="@drawable/auto_fix"
+            android:layout_weight="1" />
+
+        <com.lucime.promfy.ui.CircleButton
+            android:id="@+id/button_campaigns"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="10dp"
+            app:cb_color="#fff"
+            android:src="@drawable/seal"
+            android:layout_weight="1" />
+
+        <com.lucime.promfy.ui.CircleButton
+            android:id="@+id/button_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="10dp"
+            app:cb_color="#fff"
+            android:src="@drawable/pin"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+</RelativeLayout>
